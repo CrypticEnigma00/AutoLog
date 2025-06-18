@@ -35,24 +35,20 @@ function AL.EnableEncounterLog(enable)
     if enable then
         if IsEncounterLogEnabled() then
             logger:Debug("Encounter logging is already enabled.")
-            --chat:print("Encounter logging is already enabled.")
             AL.log("Encounter logging is already enabled.")
             return
         end
         SetEncounterLogEnabled(true)
         logger:Debug("Encounter logging enabled.")
-        --chat:print("Encounter logging enabled.")
         AL.log("Encounter logging enabled.")
     else
         if not IsEncounterLogEnabled() then
             logger:Debug("Encounter logging is already disabled.")
-            --chat:print("Encounter logging is already disabled.")
             AL.log("Encounter logging is already disabled.")
             return
         end
         SetEncounterLogEnabled(false)
         logger:Debug("Encounter logging disabled.")
-        --chat:print("Encounter logging disabled.")
         AL.log("Encounter logging disabled.")
     end
 end
