@@ -1,8 +1,8 @@
 Autolog = Autolog or {}
-local AL = Autolog
+local AL = AutoLog
 
-Autolog.Menu = {}
-local ALM = Autolog.Menu
+AL.Menu = {}
+local ALM = AL.Menu
 
 ALM.name = "AutoLogMenu"
 
@@ -11,6 +11,7 @@ local logger = LibDebugLogger(ALM.name)
 
 
 function ALM.Init()
+    logger:Debug("Initializing AutoLog Menu...")
     ALM.InitSV()
     ALM.InitAM()
 end
@@ -31,7 +32,7 @@ function ALM.InitAM()
 
     local panelData = {
         type = "panel",
-        name = AL.simpleName,
+        name = AL.displayName,
         displayName = AL.displayName:upper(),
         author = AL.author,
         version = AL.version,
