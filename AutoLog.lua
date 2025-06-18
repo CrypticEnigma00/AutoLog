@@ -2,6 +2,7 @@ AutoLog = AutoLog or {}
 local AL = AutoLog
 
 AL.name = "AutoLog"
+AL.author = "CrypticEnigma00"
 AL.simpleName = "AL"
 AL.displayName = "AutoLog"
 AL.version = "0.0.1"
@@ -57,6 +58,15 @@ function AL.OnZoneChange()
     logger:Debug("OnZoneChange called.")
     -- This function is called when the player changes zones.
     -- It checks if the zone has changed and updates the current zone accordingly.
+    if not AL.settings then
+        logger:Error("Settings table is not initialized.")
+        return
+    end
+    if not AL.settings.enabled then
+        logger:Debug("AutoLog is disabled in settings. Skipping zone change handling.")
+        return
+    end
+
     if not AL.zones then
         logger:Error("Zones table is not initialized.")
         return
@@ -84,15 +94,18 @@ function AL.OnZoneChange()
     AL.currentZoneId = zoneId
     logger:Debug("Current Zone changed to: " .. AL.currentZone.name .. " (ID: " .. zoneId .. ")")
 
+    -- Check if the current zone is a trial and handle logging accordingly
     if AL.currentZone then
-        if AL.currentZone.GetCategory() == AL.ACTIVITIES.TRIALS then
-            logger:Debug("In Trial zone: " .. AL.currentZone.name .. " (ID: " .. zoneId .. ")")
-            AL.EnableEncounterLog(true)
-            return
-        else
-            logger:Debug("In non-trial zone: " .. AL.currentZone.name .. " (ID: " .. zoneId .. ")")
-            AL.EnableEncounterLog(false)
-            return
+        if AL.settings.logTrials then
+            if AL.currentZone.GetCategory() == AL.ACTIVITIES.TRIALS then
+                logger:Debug("In Trial zone: " .. AL.currentZone.name .. " (ID: " .. zoneId .. ")")
+                AL.EnableEncounterLog(true)
+                return
+            else
+                logger:Debug("In non-trial zone: " .. AL.currentZone.name .. " (ID: " .. zoneId .. ")")
+                AL.EnableEncounterLog(false)
+                return
+            end
         end
     end
 
@@ -111,13 +124,21 @@ end
 
 function AL.Init()
     logger:Debug("Initializing AutoLog...")
+
+
+
     AL.currentZoneId = -1
     AL.currentZone = AL.zones["GEN"] or {}
 end
 
 function AL.OnAddOnLoaded(_, addonName)
     if addonName ~= AL.name then return end
+
+    --Component initialization
     AL.Init()
+    AL.Menu.Init()
+
+    -- Register events after initialization
     AL.RegisterEvents()
 end
 
