@@ -19,5 +19,22 @@ AutoLogConstants.lua
 lang/en.lua
 lang/$(language).lua
 
-zones/AA.lua
 zones/GEN.lua
+zones/SUB.lua
+zones/PVP.lua
+zones/AA.lua
+zones/SO.lua
+zones/HRC.lua
+zones/MOL.lua
+zones/HOF.lua
+zones/AS.lua
+zones/CR.lua
+zones/SS.lua
+zones/KA.lua
+zones/RG.lua
+zones/DSR.lua
+zones/SE.lua
+zones/BRP.lua
+zones/EA.lua
+zones/LC.lua
+zones/OC.lua
