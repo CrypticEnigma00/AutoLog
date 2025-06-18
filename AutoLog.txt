@@ -1,0 +1,23 @@
+## Title: AutoLog
+## Author: CrypticEnigma00
+## Version: 0.0.1
+## AddOnVersion: 1200
+## Description: Enables Encounter Log automatically when entering a trial zone and disables when you leave 
+## APIVersion: 101046
+## DependsOn: LibAddonMenu-2.0>=35 LibChatMessage>=105 LibDebugLogger>=105
+## SavedVariables: AutoLogSV
+
+## This Add-on is not created by, affiliated with or sponsored by ZeniMax Media Inc. or its affiliates.
+## The Elder Scrolls® and related logos are registered trademarks or trademarks of ZeniMax Media Inc. in the United States and/or other countries.
+## All rights reserved.
+##
+## You can read the full terms at https://account.elderscrollsonline.com/add-on-terms
+
+AutoLog.lua
+AutoLogConstants.lua
+
+lang/en.lua
+lang/$(language).lua
+
+zones/AA.lua
+zones/GEN.lua

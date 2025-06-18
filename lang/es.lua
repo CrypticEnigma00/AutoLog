@@ -1,0 +1,360 @@
+local language = {
+
+    -- MESSAGES
+    AL_MSG_FIRSTSTART =
+    "Si estás usando Wizard's Wardrobe por primera vez, asegúrate de consultar las preguntas frecuentes y la lista de funciones en la página %s. La mayoría de las preguntas ya están respondidas allí.",
+    AL_MSG_ENOENT = "No hay tal entrada.",
+    AL_MSG_ERROR = "¡ERROR!",
+    AL_MSG_LOADSETUP = "Cargando configuración [%s] desde [%s].",
+    AL_MSG_LOADINFIGHT = "Cargando configuración [%s] desde [%s] después del combate.",
+    AL_MSG_SAVESETUP = "Guardando configuración [%s].",
+    AL_MSG_DELETESETUP = "Eliminando configuración [%s].",
+    AL_MSG_EMPTYSETUP = "La configuración está vacía.",
+    AL_MSG_FOODENOENT = "¡No se pudo encontrar comida de bonificación coincidente en tu inventario!",
+    AL_MSG_NOFOODRUNNING =
+    "No hay comida activa. Come algo y vuelve a intentarlo o arrastra y suelta comida sobre el botón de comida.",
+    AL_MSG_NOTFOOD = "Este objeto no es una comida de bonificación o actualmente no es compatible.",
+    AL_MSG_LOADSKILLS = "Cargando habilidades %s desde [%s].",
+    AL_MSG_SAVESKILLS = "Guardando habilidades en la configuración %s.",
+    AL_MSG_SKILLENOENT = "No se pudo equipar [%s]. La habilidad no está desbloqueada.",
+    AL_MSG_SKILLSTUCK = "No se pudo equipar la habilidad [%s].",
+    AL_MSG_LOADGEAR = "Cargando equipo %s desde [%s].",
+    AL_MSG_SAVEGEAR = "Guardando equipo en la configuración %s.",
+    AL_MSG_GEARENOENT = "No se pudo encontrar %s en tu inventario!",
+    AL_MSG_GEARSTUCK = "No se pudo mover el objeto %s.",
+    AL_MSG_FULLINV = "Tu inventario está lleno. Es posible que el equipo no se haya movido correctamente.",
+    AL_MSG_LOADCP = "Cargando CP %s desde [%s].",
+    AL_MSG_SAVECP = "Guardando CP en la configuración %s.",
+    AL_MSG_CPENOENT = "No se pudo equipar [%s]. La estrella no está desbloqueada.",
+    AL_MSG_CPNOTSLOTTABLEINFO = "No se pudo equipar [%s]. La estrella no es equipable.",
+    AL_MSG_CPCOOLDOWN = "Los puntos de campeón se cambiarán en %ss.",
+    AL_MSG_CPCOOLDOWNOVER = "Puntos de campeón cambiados.",
+    AL_MSG_TELEPORT_PLAYER = "Teletransportándote a %s.",
+    AL_MSG_TELEPORT_WAYSHRINE = "Teletransportándote a un altar de caminos.",
+    AL_MSG_TELEPORT_WAYSHRINE_ERROR = "El altar de caminos no está desbloqueado.",
+    AL_MSG_TELEPORT_HOUSE = "Teletransportándote a la residencia principal.",
+    AL_MSG_TOGGLEAUTOEQUIP = "%s autoequipado.",
+    AL_MSG_TOGGLEAUTOEQUIP_ON = "Activado",
+    AL_MSG_TOGGLEAUTOEQUIP_OFF = "Desactivado",
+    AL_MSG_CLEARQUEUE = "Borradas %d entradas de la cola.",
+    AL_MSG_NOREPKITS = "¡No se pudo encontrar ningún kit de reparación en tu inventario!",
+    AL_MSG_NOTENOUGHREPKITS = "¡No se pudo encontrar suficientes kits de reparación en tu inventario!",
+    AL_MSG_NOSOULGEMS = "¡No se pudo encontrar ninguna gema de alma en tu inventario!",
+    AL_MSG_NOTENOUGHSOULGEMS = "¡No se pudo encontrar suficientes gemas de alma en tu inventario!",
+    AL_MSG_NOPOISONS = "¡No se pudo encontrar ningún veneno en tu inventario!",
+    AL_MSG_IMPORTSUCCESS = "Todos los objetos se importaron correctamente.",
+    AL_MSG_IMPORTGEARENOENT =
+    "No se pudieron importar todos los objetos. Asegúrate de tener todos los objetos en tu inventario o en tu banco. Los rasgos no importan.",
+    AL_MSG_WITHDRAW_SETUP = "Retirando configuración [%s] del banco.",
+    AL_MSG_WITHDRAW_PAGE = "Retirando todas las configuraciones de [%s] del banco.",
+    AL_MSG_WITHDRAW_FULL = "No se pudieron mover los objetos. Asegúrate de que haya suficiente espacio en tu inventario.",
+    AL_MSG_WITHDRAW_ENOENT = "No se pudieron encontrar todos los objetos en el banco.",
+    AL_MSG_DEPOSIT_SETUP = "Depositando configuración [%s] en el banco.",
+    AL_MSG_DEPOSIT_PAGE = "Depositando todas las configuraciones de [%s] en el banco.",
+    AL_MSG_DEPOSIT_FULL = "No se pudieron depositar los objetos en el banco. Asegúrate de que haya suficiente espacio.",
+    AL_MSG_TRANSFER_FINISHED = "Todos los objetos se movieron correctamente.",
+    AL_MSG_TRANSFER_TIMEOUT = "Al menos un objeto está atascado. Por favor, inténtalo de nuevo.",
+    AL_MSG_FOOD_FADED = "Tu comida de bonificación se acabó. ¡Disfruta tu %s!",
+    AL_MSG_FOOD_COMBAT =
+    "Tu comida de bonificación se acabó justo en medio del combate. El mago te proporcionará %s después del combate si aún es necesario.",
+    AL_MSG_NOFOOD = "¡No se pudo encontrar ninguna comida de bonificación coincidente en tu inventario!",
+    AL_MSG_SWAPFAIL =
+    "%s en tu configuración no pudo cambiarse, intentando solución alternativa, por favor espera unos segundos",
+    AL_MSG_SWAPFAIL_DISABLED = "%s en tu configuración no pudo cambiarse",
+    AL_MSG_SWAPSUCCESS = "La configuración se cargó correctamente",
+    AL_MSG_SWAP_FIX_FAIL =
+    "Todas las soluciones alternativas han fallado, por favor intenta desequipar manualmente la pieza atascada o intenta guardar nuevamente la configuración si todo se intercambió correctamente",
+    AL_MSG_BLOCK_WARN = "¡NO BLOQUEAR!",
+
+    -- ADDON MENU
+    AL_MENU_GENERAL = "General",
+    AL_MENU_PRINTCHAT = "Mostrar mensajes",
+    AL_MENU_PRINTCHAT_TT =
+    "Muestra mensajes sobre las configuraciones cargadas en el chat, las notificaciones de alerta o los anuncios en pantalla.",
+    AL_MENU_PRINTCHAT_OFF = "Desactivado",
+    AL_MENU_PRINTCHAT_CHAT = "Chat",
+    AL_MENU_PRINTCHAT_ALERT = "Alerta",
+    AL_MENU_PRINTCHAT_ANNOUNCEMENT = "Anuncio",
+    AL_MENU_OVERWRITEWARNING = "Mostrar advertencia al sobrescribir",
+    AL_MENU_OVERWRITEWARNING_TT = "Muestra una advertencia si se sobrescribe una configuración ya guardada.",
+    AL_MENU_INVENTORYMARKER = "Marcador de inventario",
+    AL_MENU_INVENTORYMARKER_TT =
+    "Muestra un pequeño icono sobre los objetos en el inventario que están guardados en las configuraciones.",
+    AL_MENU_UNEQUIPEMPTY = "Desequipar espacios vacíos",
+    AL_MENU_UNEQUIPEMPTY_TT =
+    "Si algo está guardado como vacío en la configuración, el objeto/punto de campeón/habilidad será desequipado.",
+    AL_MENU_IGNORE_TABARDS = "Ignorar espacios vacíos de tabardos",
+    AL_MENU_IGNORE_TABARDS_TT =
+    "Si un atuendo se guarda sin tabardo, no se eliminará ningún tabardo actualmente equipado.",
+    AL_MENU_RESETUI = "Reiniciar IU",
+    AL_MENU_RESETUI_TT =
+    "|cFF0000Esto reinicia la ventana y todas sus posiciones en las escenas.|r\nDespués, debe abrirse nuevamente con /wizard o la tecla de acceso directo.",
+    AL_MENU_AUTOEQUIP = "Autoequipamiento",
+    AL_MENU_AUTOEQUIP_DESC = "Estas configuraciones controlan qué se carga/guarda exactamente desde la configuración.",
+    AL_MENU_AUTOEQUIP_GEAR = "Equipo",
+    AL_MENU_AUTOEQUIP_SKILLS = "Habilidades",
+    AL_MENU_AUTOEQUIP_CP = "Puntos de campeón",
+    AL_MENU_AUTOEQUIP_BUFFFOOD = "Comida de bonificación",
+    AL_MENU_SUBSTITUTE = "Configuraciones sustitutas",
+    AL_MENU_SUBSTITUTE_OVERLAND = "Superficie",
+    AL_MENU_SUBSTITUTE_OVERLAND_TT = "Incluye también mazmorras públicas y del mundo abierto.",
+    AL_MENU_SUBSTITUTE_DUNGEONS = "Mazmorras",
+    AL_MENU_SUBSTITUTE_WARNING =
+    "Estas opciones habilitan la carga de configuraciones sustitutas fuera de las zonas admitidas. Es |cFF0000experimental|r y no funcionará en todos los jefes. Las nuevas mazmorras suelen funcionar mejor que las antiguas.",
+    AL_MENU_PANEL = "Panel de información",
+    AL_MENU_PANEL_ENABLE = "Activar panel",
+    AL_MENU_PANEL_ENABLE_TT =
+    "Muestra el nombre del conjunto y de la página, así como la zona actual.\nUn nombre de conjunto |cF8FF70amarillo|r indica una carga retrasada de la configuración. Un nombre de conjunto |cFF7070rojo|r significa que la configuración actual ya no coincide con la guardada.",
+    AL_MENU_PANEL_MINI = "Modo lite",
+    AL_MENU_PANEL_MINI_TT = "Oculta el icono y reduce el tamaño del panel.",
+    AL_MENU_PANEL_LOCK = "Bloquear movimiento",
+    AL_MENU_MODULES = "Módulos",
+    AL_MENU_CHARGEWEAPONS = "Cargar armas automáticamente",
+    AL_MENU_REPAIRARMOR = "Reparar armadura automáticamente",
+    AL_MENU_REPAIRARMOR_TT = "Reparar en el vendedor y usar kits de reparación.",
+    AL_MENU_KITCHOICE = "Puede usar kits de reparación de coronas si están disponibles",
+    AL_MENU_KITCHOICE_TT =
+    "Si tienes kits de reparación de coronas en tu inventario, también se pueden usar si no hay kits predeterminados disponibles. Desactivado significa que ignorará los kits de reparación de coronas.",
+    AL_MENU_FILLPOISONS = "Reponer venenos automáticamente",
+    AL_MENU_FILLPOISONS_TT =
+    "Intenta reponer automáticamente los venenos del inventario.\n|H1:item:76827:308:50:0:0:0:0:0:0:0:0:0:0:0:0:36:1:0:0:0:138240|h|h también se cambia con |H1:item:79690:6:1:0:0:0:0:0:0:0:0:0:0:0:1:36:0:1:0:0:0|h|h (y viceversa) si no está disponible de otra manera.",
+    AL_MENU_BUFFFOOD = "Renovar automáticamente la comida de bonificación",
+    AL_MENU_BUFFFOOD_TT =
+    "Come automáticamente la comida correspondiente nuevamente cuando se agota. Solo funciona en ensayos y mazmorras.\nConsulta \"AutoLogConst.lua\" para ver qué alimentos son compatibles. Habrá más próximamente.",
+    AL_MENU_FIXES_FIXSURFINGWEAPONS = "Arreglar deslizamiento en armas",
+    AL_MENU_FIXES_FIXSURFINGWEAPONS_TT =
+    "Cambiará dos veces la opción \"Ocultar tu casco\" cada vez que cambies de zona para arreglar el error de deslizamiento en las armas.",
+    AL_MENU_WEAPON_GEAR_FIX = "Arreglar intercambios de equipo fallidos.",
+    AL_MENU_WEAPON_GEAR_FIX_TT = "Automatiza los pasos que tomamos para arreglar los intercambios de equipo fallidos",
+    AL_MENU_VALIDATION_DELAY = "Retraso de validación",
+    AL_MENU_VALIDATION_DELAY_TT =
+    "Elige aquí la cantidad de MS después de la cual se realiza la validación de la configuración",
+    AL_MENU_VALIDATION_DELAY_WARN =
+    "Cuanto más largo sea el retraso, menor será la posibilidad de tener falsos positivos. Si es demasiado bajo, podría causar un comportamiento no deseado.",
+    AL_MENU_COMPARISON_DEPTH = "Profundidad de comparación",
+    AL_MENU_COMPARISON_DEPTH_EASY = "Fácil",
+    AL_MENU_COMPARISON_DEPTH_DETAILED = "Detallado",
+    AL_MENU_COMPARISON_DEPTH_THOROUGH = "Exhaustivo",
+    AL_MENU_COMPARISON_DEPTH_EASY_TT = "Solo comprobará el tipo de arma y el conjunto.",
+    AL_MENU_COMPARISON_DEPTH_DETAILED_TT = "Comprobará el rasgo, el tipo de arma, el conjunto y la calidad.",
+    AL_MENU_COMPARISON_DEPTH_THOROUGH_TT =
+    "Comprobará el rasgo, el tipo de arma, el conjunto, la calidad y el encantamiento.",
+    AL_MENU_COMPARISON_IGNORE_COSTUME_SLOTS = "Ignorar disfraces",
+    AL_MENU_COMPARISON_IGNORE_COSTUME_SLOTS_TT = "Si está activado, se ignorarán los disfraces.",
+    AL_MENU_COMPARISON_IGNORE_POISON_SLOTS = "Ignorar espacios de veneno",
+    AL_MENU_COMPARISON_IGNORE_POISON_SLOTS_TT = "Si está activado, se ignorarán los venenos.",
+
+    -- USER INTERFACE
+    AL_CHANGELOG =
+    "Atención: Esta actualización contiene algunos cambios importantes. Por favor, lee el registro de cambios actual, ya que algunas cosas pueden funcionar de manera diferente a como solían hacerlo.",
+    AL_BUTTON_HELP = "|cFFFFFF[Haz clic]|r para abrir la wiki",
+    AL_BUTTON_SETTINGS = "Configuración",
+    AL_BUTTON_CLEARQUEUE = "Restablecer cola\n(Se puede usar si hay demasiados cambios de conjunto en cola.)",
+    AL_BUTTON_UNDRESS = "Desvestir",
+    AL_BUTTON_PREBUFF = "Prebuff",
+    AL_BUTTON_LABEL = "|cFFFFFF[Haz clic]|r para cargar la configuración",
+    AL_BUTTON_BANKING = "|cFFFFFF[Haz clic]|r para retirar equipo,\n|cFFFFFF[Mayús + Clic]|r para depositar",
+    AL_BUTTON_PREVIEW = "Vista previa",
+    AL_BUTTON_SAVE = "Guardar",
+    AL_BUTTON_MODIFY = "Modificar",
+    AL_BUTTON_RENAME = "Renombrar",
+    AL_BUTTON_REARRANGE_PAGES = "Reorganizar paginas",
+    AL_BUTTON_REARRANGE_SETUPS = "Reorganizar configuraciones",
+    AL_BUTTON_TELEPORT = "Teletransportar",
+    AL_BUTTON_TOGGLEAUTOEQUIP = "Alternar autoequipamiento",
+    AL_BUTTON_ADDPAGE = "Agregar página",
+    AL_BUTTON_ADDSETUP = "Agregar configuración",
+    AL_BUTTON_GEAR =
+    "¡Ningún equipo guardado!\nPresiona |cFFFFFF[Mayús + Clic]|r para guardar el equipo actual o arrastra y suelta objetos sobre este botón.",
+    AL_BUTTON_SKILLS =
+    "¡Ninguna habilidad guardada!\nPresiona |cFFFFFF[Mayús + Clic]|r para guardar las barras de habilidades actuales o arrastra y suelta hechizos sobre este botón.",
+    AL_BUTTON_CP =
+    "¡Ningún PC guardado!\nPresiona |cFFFFFF[Mayús + Clic]|r para guardar los objetos equipables actuales.",
+    AL_BUTTON_BUFFFOOD =
+    "¡Ninguna comida de bonificación guardada!\nPresiona |cFFFFFF[Mayús + Clic]|r para guardar la comida actual o arrastra y suelta comida sobre este botón.",
+    AL_RENAME_PAGE = "Introduce un nuevo nombre para la página:",
+    AL_DELETEPAGE_WARNING = "¿Realmente quieres eliminar la página [%s]?",
+    AL_OVERWRITESETUP_WARNING = "¿Realmente quieres sobrescribir la configuración [%s]?",
+    AL_DELETE = "Eliminar",
+    AL_ENABLE = "Activar",
+    AL_DISABLE = "Desactivar",
+    AL_MISSING_GEAR_TT = "Los siguientes objetos faltan:\n\n%s\n\n|cFFFFFF[Haz clic]|r para actualizar",
+    AL_SUBSTITUTE_EXPLAIN =
+    "Estas configuraciones se cargan si no hay una configuración almacenada en la página de prueba seleccionada.\nSi no quieres usar esta función, simplemente déjala vacía.",
+    AL_CONDITION_NAME = "Nombre",
+    AL_CONDITION_BOSS = "Jefe",
+    AL_CONDITION_AFTER = "Después de",
+    AL_CONDITION_NONE = "Ninguno",
+    AL_CONDITION_EVERYWHERE = "En todas partes",
+    AL_IMPORT = "Importar",
+    AL_IMPORT_HELP =
+    "Pega |cFFFFFF[CTRL + V]|r el texto exportado aquí. Asegúrate de que el texto no esté manipulado, de lo contrario, la importación puede fallar.\nNecesitas todos los objetos en el inventario. Los rasgos de la configuración exportada tendrán prioridad, pero si el objeto en el inventario no tiene el rasgo correcto, también se usarán objetos con un rasgo \"incorrecto\".",
+    AL_IMPORT_TT = "|cFF0000¡Atención! Esto sobrescribirá la configuración seleccionada.|r",
+    AL_EXPORT = "Exportar",
+    AL_EXPORT_HELP =
+    "Copia el texto seleccionado con |cFFFFFF[CTRL + C]|r y compártelo con otros.\nContiene equipo, habilidades y puntos de campeón en un formato compacto para importarlo en otro lugar.",
+    AL_CUSTOMCODE = "Código Lua",
+    AL_CUSTOMCODE_HELP = "Este código se ejecuta después de cargar la configuración.",
+    AL_CUSTOMCODE_EDITBOX =
+    "Introduce tu código aquí\nSi necesitas ayuda con los objetos de la biblioteca dentro de esto, consulta las páginas de la biblioteca ESOUI / GitHub\nEjemplo:\nSetCurrentQuickslot(4) == Se utiliza para cambiar el objeto en la ranura rápida. 8 es abajo, 4 es arriba, va en sentido antihorario\nchat:Print(hola) == un objeto LibChatMessage\ncodeTask == un objeto LibAsync\nlogger:Debug / logger:Error etc == un subregistrador de AL dentro del objeto LibDebugLogger\n\nEl código aquí se ejecuta después de que se intente cargar la configuración. Ignora si el usuario está en combate o no. Si quieres que se ejecute después de salir del combate, simplemente encierra tu código en << >> (es la misma tarea que codeTask)",
+    AL_DUPLICATE = "Duplicar",
+    AL_DUPLICATE_NAME = "Copia de %s",
+    AL_LINK_IMPORT = "Agregar a la Guardarropa",
+    AL_PREBUFF_HELP =
+    "Arrastra y suelta hechizos en las barras de prebuff.\nSi el interruptor está activado, mantendrá los hechizos de prebuff en tu barra de habilidades hasta que presiones esa barra de habilidades nuevamente. De lo contrario, se desactivará después de lanzar el hechizo.\nEl retraso para los hechizos \"normales\" es de ~500ms, las habilidades canalizadas necesitan más.",
+
+
+    -- BOSS & TRIAL NAMES
+    AL_PAGE = "Página %s",
+    AL_EMPTY = "Vacío",
+    AL_UNNAMED = "Sin nombre",
+    AL_TRASH = "Basura",
+
+    AL_GENERAL = "General",
+
+    AL_SUB_NAME = "Configuraciones de sustitución",
+    AL_SUB_BOSS = "Jefe de sustitución",
+    AL_SUB_TRASH = "Basura de sustitución",
+
+    AL_PVP_NAME = "Jugador contra Jugador",
+
+    AL_AA_NAME = "Archivo Aetérico",
+    AL_AA_STORMATRO = "Atronach tormenta de relámpagos",
+    AL_AA_STONEATRO = "Atronach de piedra fundamental",
+    AL_AA_VARLARIEL = "Varlariel",
+    AL_AA_MAGE = "El Mago",
+
+    AL_SO_NAME = "Santuario de Ophidia",
+    AL_SO_MANTIKORA = "Manticora poseída",
+    AL_SO_TROLL = "Rompedor de piedras",
+    AL_SO_OZARA = "Ozara",
+    AL_SO_SERPENT = "La Serpiente",
+
+    AL_HRC_NAME = "Ciudadela de Hel Ra",
+    AL_HRC_RAKOTU = "Ra Kotu",
+    AL_HRC_LOWER = "Yokeda Rok'dun",
+    AL_HRC_UPPER = "Yokeda Kai",
+    AL_HRC_WARRIOR = "El Guerrero",
+
+    AL_MOL_NAME = "Fauces de Lokhaj",
+    AL_MOL_ZHAJHASSA = "Zhaj'hassa el Olvidado",
+    AL_MOL_TWINS = "Gemelos",
+    AL_MOL_RAKKHAT = "Rakkhat",
+
+    AL_HOF_NAME = "Salones de la Fabricación",
+    AL_HOF_HUNTERKILLER = "Cazador-Asesino Negatrix",
+    AL_HOF_HUNTERKILLER_DN = "Cazador-Asesino",
+    AL_HOF_FACTOTUM = "Factótum del pináculo",
+    AL_HOF_SPIDER = "Arcucustodio",
+    AL_HOF_COMMITEE = "Reactor",
+    AL_HOF_COMMITEE_DN = "Comité",
+    AL_HOF_GENERAL = "General de la Asamblea",
+
+    AL_AS_NAME = "Asylum Sanctorium",
+    AL_AS_OLMS = "San Olms el Justo",
+    AL_AS_FELMS = "San Felms el Audaz",
+    AL_AS_LLOTHIS = "San Llothis el Piadoso",
+
+    AL_CR_NAME = "Nubelia",
+    AL_CR_GALENWE = "Sombra de Galenwe",
+    AL_CR_RELEQUEN = "Sombra de Relequen",
+    AL_CR_SIRORIA = "Sombra de Siroria",
+    AL_CR_ZMAJA = "Z'Maja",
+
+    AL_SS_NAME = "Cúspide del Sol",
+    AL_SS_LOKKESTIIZ = "Lokkestiiz",
+    AL_SS_YOLNAHKRIIN = "Yolnahkriin",
+    AL_SS_NAHVIINTAAS = "Nahviintaas",
+
+    AL_KA_NAME = "Égida de Kyne",
+    AL_KA_YANDIR = "Yandir el Carnicero",
+    AL_KA_VROL = "Capitán Vrol",
+    AL_KA_FALGRAVN = "Lord Falgravn",
+
+    AL_RG_NAME = "Arboleda Pétrea",
+    AL_RG_OAXILTSO = "Oaxiltso",
+    AL_RG_BAHSEI = "Bahsei, heraldo de las llamas",
+    AL_RG_XALVAKKA = "Xalvakka",
+    AL_RG_SNAKE = "Disfrutador de serpientes",
+    AL_RG_ASHTITAN = "Titán de cenizas",
+
+    AL_DSR_NAME = "Arrecife de coral",
+    AL_DSR_LYLANARTURLASSIL = "Lylanar",
+    AL_DSR_LYLANARTURLASSIL_DN = "Lylanar y Turlassil",
+    AL_DSR_GUARDIAN = "Guardián del arrecife",
+    AL_DSR_TALERIA = "Taleria Nacida de las mareas",
+    AL_DSR_SAILRIPPER = "Desgarrador de velas",
+    AL_DSR_BOWBREAKER = "Rompecorazones",
+
+    AL_SE_NAME = "Borde de la locura",
+    AL_SE_DESCENDER = "Descensor espiral",
+    AL_SE_YASEYLA = "Yaseyla Exarcanica",
+    AL_SE_TWELVANE = "Archimago Twelvane",
+    AL_SE_ANSUUL = "Ansuul el Atormentador",
+
+    AL_LC_NAME = "Lucent Citadel",
+    AL_LC_RYELAZ = "Conde Ryelaz y Zilyesset",
+    AL_LC_CAVOT_AGNAN = "Cavot Agnan",
+    AL_LC_ORPHIC = "Fragmento Despedazado Órfico",
+    AL_LC_XORYN = "Xoryn",
+
+    AL_MSA_NAME = "Maelstrom Arena",
+
+    AL_VH_NAME = "Las Quebradas del Vateshran",
+
+    AL_DSA_NAME = "La Arena de Estrella del Dragón",
+
+    AL_BRP_NAME = "Prisión de la Rosa Negra",
+    AL_BRP_FIRST = "Hechicero de Batalla Ennodius",
+    AL_BRP_SECOND = "Domador de Bestias",
+    AL_BRP_THIRD = "Lady Minara",
+    AL_BRP_FOURTH = "Todos ellos",
+    AL_BRP_FIFTH = "Drakeeh el Desencadenado",
+    AL_BRP_FINALROUND = "Ronda final",
+
+
+    -- KEYBINDS
+    SI_BINDING_NAME_AL_HOTKEY_SHOW_UI = "Abrir Wizard's Wardrobe",
+    SI_BINDING_NAME_AL_HOTKEY_FIXES_FLIP_SHOULDERS = "Corregir Hombros",
+    SI_BINDING_NAME_AL_HOTKEY_SETUP_1 = "Setup 1 (Trash)",
+    SI_BINDING_NAME_AL_HOTKEY_SETUP_2 = "Setup 2",
+    SI_BINDING_NAME_AL_HOTKEY_SETUP_3 = "Setup 3",
+    SI_BINDING_NAME_AL_HOTKEY_SETUP_4 = "Setup 4",
+    SI_BINDING_NAME_AL_HOTKEY_SETUP_5 = "Setup 5",
+    SI_BINDING_NAME_AL_HOTKEY_SETUP_6 = "Setup 6",
+    SI_BINDING_NAME_AL_HOTKEY_SETUP_7 = "Setup 7",
+    SI_BINDING_NAME_AL_HOTKEY_SETUP_8 = "Setup 8",
+    SI_BINDING_NAME_AL_HOTKEY_SETUP_9 = "Setup 9",
+    SI_BINDING_NAME_AL_HOTKEY_SETUP_10 = "Setup 10",
+    SI_BINDING_NAME_AL_HOTKEY_SETUP_11 = "Setup 11",
+    SI_BINDING_NAME_AL_HOTKEY_SETUP_12 = "Setup 12",
+    SI_BINDING_NAME_AL_HOTKEY_SETUP_13 = "Setup 13",
+    SI_BINDING_NAME_AL_HOTKEY_SETUP_14 = "Setup 14",
+    SI_BINDING_NAME_AL_HOTKEY_SETUP_15 = "Setup 15",
+    SI_BINDING_NAME_AL_HOTKEY_SETUP_16 = "Setup 16",
+    SI_BINDING_NAME_AL_HOTKEY_SETUP_17 = "Setup 17",
+    SI_BINDING_NAME_AL_HOTKEY_SETUP_18 = "Setup 18",
+    SI_BINDING_NAME_AL_HOTKEY_SETUP_19 = "Setup 19",
+    SI_BINDING_NAME_AL_HOTKEY_SETUP_20 = "Setup 20",
+    SI_BINDING_NAME_AL_HOTKEY_SETUP_21 = "Setup 21",
+    SI_BINDING_NAME_AL_HOTKEY_SETUP_22 = "Setup 22",
+    SI_BINDING_NAME_AL_HOTKEY_SETUP_23 = "Setup 23",
+    SI_BINDING_NAME_AL_HOTKEY_SETUP_24 = "Setup 24",
+    SI_BINDING_NAME_AL_HOTKEY_SETUP_25 = "Setup 25",
+    SI_BINDING_NAME_AL_HOTKEY_PREBUFF_1 = "Prebuff 1",
+    SI_BINDING_NAME_AL_HOTKEY_PREBUFF_2 = "Prebuff 2",
+    SI_BINDING_NAME_AL_HOTKEY_PREBUFF_3 = "Prebuff 3",
+    SI_BINDING_NAME_AL_HOTKEY_PREBUFF_4 = "Prebuff 4",
+    SI_BINDING_NAME_AL_HOTKEY_PREBUFF_5 = "Prebuff 5",
+
+    SI_BINDING_NAME_AL_HOTKEY_UNDRESS = "Desvestir",
+    SI_BINDING_NAME_AL_HOTKEY_SETUP_PREVIOUS = "Equipar configuración anterior",
+    SI_BINDING_NAME_AL_HOTKEY_SETUP_CURRENT = "Recargar configuración actual",
+    SI_BINDING_NAME_AL_HOTKEY_SETUP_NEXT = "Equipar siguiente configuración",
+    SI_BINDING_NAME_AL_HOTKEY_SETUP_FIX = "Intentar corregir cambio de configuración fallido"
+}
+
+for key, value in pairs(language) do
+    SafeAddVersion(key, 1)
+    ZO_CreateStringId(key, value)
+end
