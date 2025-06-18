@@ -2,7 +2,7 @@ AutoLog = AutoLog or {}
 local AL = AutoLog
 
 AL.name = "AutoLog"
-AL.simpleName = "AutoLog"
+AL.simpleName = "AL"
 AL.displayName = "AutoLog"
 AL.version = "0.0.1"
 AL.currentZoneId = 0
@@ -10,6 +10,8 @@ AL.zones = {}
 AL.currentZone = {}
 
 local logger = LibDebugLogger(AL.name)
+local chat = LibChatMessage(AL.displayName, AL.simpleName)
+
 AL.callbackManager = ZO_CallbackObject:New()
 
 
@@ -17,17 +19,21 @@ function AL.EnableEncounterLog(enable)
     if enable then
         if IsEncounterLogEnabled() then
             logger:Debug("Encounter logging is already enabled.")
+            chat:print("Encounter logging is already enabled.")
             return
         end
         SetEncounterLogEnabled(true)
         logger:Debug("Encounter logging enabled.")
+        chat:print("Encounter logging enabled.")
     else
         if not IsEncounterLogEnabled() then
             logger:Debug("Encounter logging is already disabled.")
+            chat:print("Encounter logging is already disabled.")
             return
         end
         SetEncounterLogEnabled(false)
         logger:Debug("Encounter logging disabled.")
+        chat:print("Encounter logging disabled.")
     end
 end
 
