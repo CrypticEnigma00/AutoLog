@@ -29,6 +29,7 @@ function AL.LookupZoneTag(zoneId)
             return zone.tag
         end
     end
+    --return a default tag if not found
     return "GEN"
 end
 
