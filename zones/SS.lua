@@ -103,3 +103,7 @@ end
 function SS.OnBossChange(bossName)
     AL.conditions.OnBossChange(bossName)
 end
+
+function SS.GetCategory()
+    return SS.category
+end

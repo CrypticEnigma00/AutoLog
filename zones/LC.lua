@@ -131,3 +131,7 @@ function LC.OnBossChange(bossName)
 
     AL.conditions.OnBossChange(bossName)
 end
+
+function LC.GetCategory()
+    return LC.category
+end

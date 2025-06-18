@@ -37,3 +37,7 @@ end
 function PVP.OnBossChange(bossName)
 
 end
+
+function PVP.GetCategory()
+    return PVP.category
+end

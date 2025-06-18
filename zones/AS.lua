@@ -62,3 +62,7 @@ function AS.OnBossChange(bossName)
 
     AL.conditions.OnBossChange(bossName)
 end
+
+function AS.GetCategory()
+    return AS.category
+end

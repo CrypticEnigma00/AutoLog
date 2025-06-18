@@ -34,3 +34,7 @@ function IA.OnBossChange(bossName)
         AL.conditions.OnBossChange(bossName)
     end
 end
+
+function IA.GetCategory()
+    return IA.category
+end

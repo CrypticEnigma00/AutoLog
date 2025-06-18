@@ -52,3 +52,7 @@ function CR.OnBossChange(bossName)
 
     AL.conditions.OnBossChange(bossName)
 end
+
+function CR.GetCategory()
+    return CR.category
+end

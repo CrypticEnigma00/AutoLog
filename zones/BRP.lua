@@ -189,3 +189,7 @@ function BRP.OnPortalSpawn(_, result, _, _, _, _, _, _, _, _, _, _, _, _, _, _, 
         BRP.lastPortalSpawn = spawnTime
     end
 end
+
+function BRP.GetCategory()
+    return BRP.category
+end

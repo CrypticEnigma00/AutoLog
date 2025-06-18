@@ -146,3 +146,7 @@ end
 function HOF.OnBossChange(bossName)
     AL.conditions.OnBossChange(bossName)
 end
+
+function HOF.GetCategory()
+    return HOF.category
+end

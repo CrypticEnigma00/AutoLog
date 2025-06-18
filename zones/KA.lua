@@ -103,3 +103,7 @@ end
 function KA.OnBossChange(bossName)
     AL.conditions.OnBossChange(bossName)
 end
+
+function KA.GetCategory()
+    return KA.category
+end

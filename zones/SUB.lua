@@ -30,3 +30,7 @@ end
 function SUB.OnBossChange(bossName)
     AL.conditions.OnBossChange(bossName)
 end
+
+function SUB.GetCategory()
+    return SUB.category
+end

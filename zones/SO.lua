@@ -39,3 +39,7 @@ end
 function SO.OnBossChange(bossName)
     AL.conditions.OnBossChange(bossName)
 end
+
+function SO.GetCategory()
+    return SO.category
+end

@@ -103,3 +103,7 @@ end
 function MOL.OnBossChange(bossName)
     AL.conditions.OnBossChange(bossName)
 end
+
+function MOL.GetCategory()
+    return MOL.category
+end

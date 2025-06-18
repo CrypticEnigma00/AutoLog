@@ -150,3 +150,7 @@ function RG.OnBossChange(bossName)
 
     AL.conditions.OnBossChange(bossName)
 end
+
+function RG.GetCategory()
+    return RG.category
+end

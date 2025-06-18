@@ -116,3 +116,7 @@ end
 function SE.OnBossChange(bossName)
     AL.conditions.OnBossChange(bossName)
 end
+
+function SE.GetCategory()
+    return SE.category
+end

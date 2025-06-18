@@ -45,3 +45,7 @@ end
 function OC.OnBossChange(bossName)
     AL.conditions.OnBossChange(bossName)
 end
+
+function OC.GetCategory()
+    return OC.category
+end

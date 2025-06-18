@@ -21,3 +21,7 @@ end
 
 function GEN.OnBossChange(bossName)
 end
+
+function GEN.GetCategory()
+    return GEN.category
+end

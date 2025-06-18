@@ -39,3 +39,7 @@ end
 function HRC.OnBossChange(bossName)
     AL.conditions.OnBossChange(bossName)
 end
+
+function HRC.GetCategory()
+    return HRC.category
+end

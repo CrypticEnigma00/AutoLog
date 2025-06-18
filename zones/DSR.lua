@@ -134,3 +134,7 @@ end
 function DSR.OnBossChange(bossName)
     AL.conditions.OnBossChange(bossName)
 end
+
+function DSR.GetCategory()
+    return DSR.category
+end
