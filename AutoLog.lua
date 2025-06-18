@@ -10,34 +10,55 @@ AL.zones = {}
 AL.currentZone = {}
 
 local logger = LibDebugLogger(AL.name)
-local chat = LibChatMessage(AL.displayName, AL.simpleName)
 
 AL.callbackManager = ZO_CallbackObject:New()
 
+function AL.log(message)
+    if not message or message == "" then
+        logger:Error("Attempted to log an empty message.")
+        return
+    end
+    local formattedMessage = string.format("[%s] %s", AL.displayName, message)
+    CHAT_ROUTER:AddSystemMessage(formattedMessage)
+end
+
+function AL.LookupZoneTag(zoneId)
+    for _, zone in pairs(AL.zones) do
+        if zone.id == zoneId then
+            return zone.tag
+        end
+    end
+    return "GEN"
+end
 
 function AL.EnableEncounterLog(enable)
     if enable then
         if IsEncounterLogEnabled() then
             logger:Debug("Encounter logging is already enabled.")
-            chat:print("Encounter logging is already enabled.")
+            --chat:print("Encounter logging is already enabled.")
+            AL.log("Encounter logging is already enabled.")
             return
         end
         SetEncounterLogEnabled(true)
         logger:Debug("Encounter logging enabled.")
-        chat:print("Encounter logging enabled.")
+        --chat:print("Encounter logging enabled.")
+        AL.log("Encounter logging enabled.")
     else
         if not IsEncounterLogEnabled() then
             logger:Debug("Encounter logging is already disabled.")
-            chat:print("Encounter logging is already disabled.")
+            --chat:print("Encounter logging is already disabled.")
+            AL.log("Encounter logging is already disabled.")
             return
         end
         SetEncounterLogEnabled(false)
         logger:Debug("Encounter logging disabled.")
-        chat:print("Encounter logging disabled.")
+        --chat:print("Encounter logging disabled.")
+        AL.log("Encounter logging disabled.")
     end
 end
 
 function AL.OnZoneChange()
+    logger:Debug("OnZoneChange called.")
     -- This function is called when the player changes zones.
     -- It checks if the zone has changed and updates the current zone accordingly.
     if not AL.zones then
@@ -57,37 +78,43 @@ function AL.OnZoneChange()
         return
     end
 
-    local zoneName = GetZoneNameById(zoneId)
-
-    AL.currentZone = AL.zones[zoneName]
-    AL.currentZoneId = zoneId
-    logger:Debug("Current Zone changed to: " .. zoneName .. " (ID: " .. zoneId .. ")")
-
-    if AL.currentZone and AL.currentZone.name == zoneName then
-        if AL.currentZone.GetCategory() == AL.ACTIVITIES.TRIALS then
-            logger:Debug("In Trial zone: " .. zoneName .. " (ID: " .. zoneId .. ")")
-            AL.EnableEncounterLog(true)
-            return
-        else
-            logger:Debug("In non-trial zone: " .. zoneName .. " (ID: " .. zoneId .. ")")
-            AL.EnableEncounterLog(false)
-        end
+    local zoneTag = AL.LookupZoneTag(zoneId)
+    if not zoneTag then
+        logger:Error("Zone tag not found for zone ID: " .. zoneId)
         return
     end
 
-    if not AL.zones[zoneName] then
-        logger:Warn("Zone not found in lookup table: " .. zoneName)
+    AL.currentZone = AL.zones[zoneTag]
+    AL.currentZoneId = zoneId
+    logger:Debug("Current Zone changed to: " .. AL.currentZone.name .. " (ID: " .. zoneId .. ")")
+
+    if AL.currentZone then
+        if AL.currentZone.GetCategory() == AL.ACTIVITIES.TRIALS then
+            logger:Debug("In Trial zone: " .. AL.currentZone.name .. " (ID: " .. zoneId .. ")")
+            AL.EnableEncounterLog(true)
+            return
+        else
+            logger:Debug("In non-trial zone: " .. AL.currentZone.name .. " (ID: " .. zoneId .. ")")
+            AL.EnableEncounterLog(false)
+            return
+        end
+    end
+
+    if not AL.zones[zoneTag] then
+        logger:Warn("Zone not found in lookup table: " .. GetZoneNameById(zoneId))
         return
     end
 end
 
 function AL.RegisterEvents()
+    logger:Debug("Registering events for AutoLog...")
     EVENT_MANAGER:UnregisterForEvent(AL.name, EVENT_ADD_ON_LOADED)
 
     EVENT_MANAGER:RegisterForEvent(AL.name, EVENT_PLAYER_ACTIVATED, AL.OnZoneChange)
 end
 
 function AL.Init()
+    logger:Debug("Initializing AutoLog...")
     AL.currentZoneId = -1
     AL.currentZone = AL.zones["GEN"] or {}
 end
