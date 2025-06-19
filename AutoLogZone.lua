@@ -110,7 +110,7 @@ function ALZ.OnZoneChange()
     end
 
     if not ALZ.zones[zoneTag] then
-        logger.Warn("Zone not found in lookup table: " .. zoneName .. " (ID: " .. zoneId .. ")")
+        logger.Warn("Zone not found in lookup table: " .. ALZ.currentZone.name .. " (ID: " .. zoneId .. ")")
         return
     end
 end

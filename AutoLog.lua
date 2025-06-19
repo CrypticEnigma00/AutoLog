@@ -14,8 +14,6 @@ function AL.Init(logger)
     AL.menu.Init(AL.logger, AL.settingsHandler, AL.displayName, AL.author, AL.version)
     AL.encounterlog.Init(AL.logger)
     AL.zone.Init(AL.logger, AL.settingsHandler, AL.encounterlog)
-
-    AL.currentZoneId = -1
     logger:Debug("AutoLog initialized successfully.")
 end
 
