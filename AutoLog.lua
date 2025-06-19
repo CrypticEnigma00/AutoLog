@@ -13,6 +13,7 @@ function AL.Init(logger)
     AL.settingsHandler.Init(AL.logger)
     AL.menu.Init(AL.logger, AL.settingsHandler, AL.displayName, AL.author, AL.version)
     AL.encounterlog.Init(AL.logger)
+    --Workload is done in this module.
     AL.zone.Init(AL.logger, AL.settingsHandler, AL.encounterlog)
     logger:Debug("AutoLog initialized successfully.")
 end
