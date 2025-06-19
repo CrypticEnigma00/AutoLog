@@ -1,6 +1,7 @@
 local AL = AutoLog
-AL.zones["KA"] = {}
-local KA = AL.zones["KA"]
+local ALZ = AL.zone
+ALZ.zones["KA"] = {}
+local KA = ALZ.zones["KA"]
 
 KA.name = GetString(AL_KA_NAME)
 KA.tag = "KA"
@@ -8,7 +9,7 @@ KA.icon = "/esoui/art/icons/achievement_u26_skyrim_vtrial_meta.dds"
 KA.priority = 9
 KA.id = 1196
 KA.node = 434
-KA.category = AL.ACTIVITIES.TRIALS
+KA.category = ALZ.ACTIVITIES.TRIALS
 
 KA.bosses = {
     [1] = {

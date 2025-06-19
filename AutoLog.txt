@@ -15,7 +15,12 @@
 
 AutoLog.lua
 AutoLogConstants.lua
+AutoLogLogger.lua
+AutoLogSettings.lua
 AutoLogMenu.lua
+AutoLogEncounterLog.lua
+AutoLogZone.lua
+
 
 lang/en.lua
 lang/$(language).lua

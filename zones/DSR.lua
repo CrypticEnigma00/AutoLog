@@ -1,6 +1,7 @@
 local AL = AutoLog
-AL.zones["DSR"] = {}
-local DSR = AL.zones["DSR"]
+local ALZ = AL.zone
+ALZ.zones["DSR"] = {}
+local DSR = ALZ.zones["DSR"]
 
 DSR.name = GetString(AL_DSR_NAME)
 DSR.tag = "DSR"
@@ -8,7 +9,7 @@ DSR.icon = "/esoui/art/icons/u34_vtrial_meta.dds"
 DSR.priority = 11
 DSR.id = 1344
 DSR.node = 488
-DSR.category = AL.ACTIVITIES.TRIALS
+DSR.category = ALZ.ACTIVITIES.TRIALS
 
 DSR.bosses = {
     [1] = {

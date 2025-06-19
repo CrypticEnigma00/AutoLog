@@ -1,6 +1,7 @@
 local AL = AutoLog
-AL.zones["BRP"] = {}
-local BRP = AL.zones["BRP"]
+local ALZ = AL.zone
+ALZ.zones["BRP"] = {}
+local BRP = ALZ.zones["BRP"]
 
 BRP.name = GetString(AL_BRP_NAME)
 BRP.tag = "BRP"
@@ -8,7 +9,7 @@ BRP.icon = "/esoui/art/icons/achievement_blackrose_veteran.dds"
 BRP.priority = 13
 BRP.id = 1082
 BRP.node = 378
-BRP.category = AL.ACTIVITIES.ARENAS
+BRP.category = ALZ.ACTIVITIES.ARENAS
 
 BRP.bosses = {
     [1] = {

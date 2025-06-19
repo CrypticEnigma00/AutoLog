@@ -1,6 +1,7 @@
 local AL = AutoLog
-AL.zones["SS"] = {}
-local SS = AL.zones["SS"]
+local ALZ = AL.zone
+ALZ.zones["SS"] = {}
+local SS = ALZ.zones["SS"]
 
 SS.name = GetString(AL_SS_NAME)
 SS.tag = "SS"
@@ -8,7 +9,7 @@ SS.icon = "/esoui/art/icons/achievement_els_sunspire_hardmode_all.dds"
 SS.priority = 8
 SS.id = 1121
 SS.node = 399
-SS.category = AL.ACTIVITIES.TRIALS
+SS.category = ALZ.ACTIVITIES.TRIALS
 
 SS.bosses = {
     [1] = {

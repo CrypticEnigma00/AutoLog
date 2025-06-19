@@ -1,6 +1,7 @@
 local AL = AutoLog
-AL.zones["IA"] = {}
-local IA = AL.zones["IA"]
+local ALZ = AL.zone
+ALZ.zones["IA"] = {}
+local IA = ALZ.zones["IA"]
 
 IA.name = zo_strformat("<<t:1>>", GetZoneNameById(1436))
 IA.tag = "IA"
@@ -8,7 +9,7 @@ IA.icon = "/esoui/art/icons/achievement_u40_ed2_defeat_final_boss_50.dds"
 IA.priority = 14
 IA.id = 1436
 IA.node = 550
-IA.category = AL.ACTIVITIES.ENDLESS
+IA.category = ALZ.ACTIVITIES.ENDLESS
 
 IA.bosses = {
     [1] = {

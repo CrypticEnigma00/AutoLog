@@ -1,12 +1,13 @@
 local AL = AutoLog
-AL.zones["PVP"] = {}
-local PVP = AL.zones["PVP"]
+local ALZ = AL.zone
+ALZ.zones["PVP"] = {}
+local PVP = ALZ.zones["PVP"]
 
 PVP.name = GetString(AL_PVP_NAME)
 PVP.tag = "PVP"
 PVP.icon = "/esoui/art/icons/achievement_071.dds"
 PVP.priority = 0
-PVP.category = AL.ACTIVITIES.MISC
+PVP.category = ALZ.ACTIVITIES.MISC
 
 PVP.id = {
     [181] = true, -- Cyrodiil

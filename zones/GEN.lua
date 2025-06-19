@@ -1,6 +1,7 @@
 local AL = AutoLog
-AL.zones["GEN"] = {}
-local GEN = AL.zones["GEN"]
+local ALZ = AL.zone
+ALZ.zones["GEN"] = {}
+local GEN = ALZ.zones["GEN"]
 
 GEN.name = GetString(AL_GENERAL)
 GEN.tag = "GEN"
@@ -8,7 +9,7 @@ GEN.icon = "/esoui/art/icons/achievement_u26_skyrim_trial_flavor_2.dds"
 GEN.priority = -2
 GEN.id = -1
 GEN.node = -1
-GEN.category = AL.ACTIVITIES.GENERAL
+GEN.category = ALZ.ACTIVITIES.GENERAL
 GEN.bosses = {}
 
 function GEN.Init()

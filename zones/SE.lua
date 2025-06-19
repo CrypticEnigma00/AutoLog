@@ -1,9 +1,7 @@
-----------
---This file was created by @JN_Slevin with help from @Ghostbane
----------
 local AL = AutoLog
-AL.zones["SE"] = {}
-local SE = AL.zones["SE"]
+local ALZ = AL.zone
+ALZ.zones["SE"] = {}
+local SE = ALZ.zones["SE"]
 
 SE.name = GetString(AL_SE_NAME)
 SE.tag = "SE"
@@ -11,7 +9,7 @@ SE.icon = "/esoui/art/icons/achievement_u38_vtrial_meta.dds"
 SE.priority = 12
 SE.id = 1427
 SE.node = 534
-SE.category = AL.ACTIVITIES.TRIALS
+SE.category = ALZ.ACTIVITIES.TRIALS
 
 SE.bosses = {
     [1] = {

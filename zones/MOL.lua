@@ -1,6 +1,7 @@
 local AL = AutoLog
-AL.zones["MOL"] = {}
-local MOL = AL.zones["MOL"]
+local ALZ = AL.zone
+ALZ.zones["MOL"] = {}
+local MOL = ALZ.zones["MOL"]
 
 MOL.name = GetString(AL_MOL_NAME)
 MOL.tag = "MOL"
@@ -8,7 +9,7 @@ MOL.icon = "/esoui/art/icons/achievement_thievesguild_004.dds"
 MOL.priority = 4
 MOL.id = 725
 MOL.node = 258
-MOL.category = AL.ACTIVITIES.TRIALS
+MOL.category = ALZ.ACTIVITIES.TRIALS
 
 MOL.bosses = {
     [1] = {

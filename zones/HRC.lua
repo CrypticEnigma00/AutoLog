@@ -1,6 +1,7 @@
 local AL = AutoLog
-AL.zones["HRC"] = {}
-local HRC = AL.zones["HRC"]
+local ALZ = AL.zone
+ALZ.zones["HRC"] = {}
+local HRC = ALZ.zones["HRC"]
 
 HRC.name = GetString(AL_HRC_NAME)
 HRC.tag = "HRC"
@@ -8,7 +9,7 @@ HRC.icon = "/esoui/art/icons/achievement_update11_dungeons_001.dds"
 HRC.priority = 3
 HRC.id = 636
 HRC.node = 230
-HRC.category = AL.ACTIVITIES.TRIALS
+HRC.category = ALZ.ACTIVITIES.TRIALS
 
 HRC.bosses = {
     [1] = {

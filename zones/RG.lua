@@ -1,6 +1,7 @@
 local AL = AutoLog
-AL.zones["RG"] = {}
-local RG = AL.zones["RG"]
+local ALZ = AL.zone
+ALZ.zones["RG"] = {}
+local RG = ALZ.zones["RG"]
 
 RG.name = GetString(AL_RG_NAME)
 RG.tag = "RG"
@@ -8,7 +9,7 @@ RG.icon = "/esoui/art/icons/achievement_u30_vtrial_meta.dds"
 RG.priority = 10
 RG.id = 1263
 RG.node = 468
-RG.category = AL.ACTIVITIES.TRIALS
+RG.category = ALZ.ACTIVITIES.TRIALS
 
 RG.bosses = {
     [1] = {

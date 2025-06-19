@@ -1,6 +1,7 @@
 local AL = AutoLog
-AL.zones["CR"] = {}
-local CR = AL.zones["CR"]
+local ALZ = AL.zone
+ALZ.zones["CR"] = {}
+local CR = ALZ.zones["CR"]
 
 CR.name = GetString(AL_CR_NAME)
 CR.tag = "CR"
@@ -8,7 +9,7 @@ CR.icon = "/esoui/art/icons/achievement_su_karnwasten_groupevent.dds"
 CR.priority = 7
 CR.id = 1051
 CR.node = 364
-CR.category = AL.ACTIVITIES.TRIALS
+CR.category = ALZ.ACTIVITIES.TRIALS
 
 CR.bosses = {
     [1] = {

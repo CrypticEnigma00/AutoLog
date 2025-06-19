@@ -1,6 +1,7 @@
 local AL = AutoLog
-AL.zones["HOF"] = {}
-local HOF = AL.zones["HOF"]
+local ALZ = AL.zone
+ALZ.zones["HOF"] = {}
+local HOF = ALZ.zones["HOF"]
 
 HOF.name = GetString(AL_HOF_NAME)
 HOF.tag = "HOF"
@@ -8,7 +9,7 @@ HOF.icon = "/esoui/art/icons/achievement_vvardenfel_036.dds"
 HOF.priority = 5
 HOF.id = 975
 HOF.node = 331
-HOF.category = AL.ACTIVITIES.TRIALS
+HOF.category = ALZ.ACTIVITIES.TRIALS
 
 HOF.bosses = {
     [1] = {
