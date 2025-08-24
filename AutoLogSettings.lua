@@ -18,6 +18,10 @@ function ASH.Init(loggerInstance)
 end
 
 function ASH.InitSV()
+    if logger == nil then
+        error("Logger is not initialized.")
+    end
+
     logger.Debug("Initializing Saved Variables for AutoLog...")
     ASH.settings = ZO_SavedVars:NewAccountWide("AutoLogSV", 1, nil, {
         enabled = true,
@@ -29,6 +33,10 @@ function ASH.InitSV()
 end
 
 function ASH.ResetSettings()
+    if logger == nil then
+        error("Logger is not initialized.")
+    end
+
     logger.Debug("Resetting AutoLog settings to default...")
     ASH.SetEnabled(true)
     ASH.SetDebugMode(false)
@@ -39,11 +47,17 @@ function ASH.ResetSettings()
 end
 
 function ASH.IsEnabled()
+    if logger == nil then
+        error("Logger is not initialized.")
+    end
     logger.Debug("Checking if AutoLog is enabled..." .. tostring(ASH.settings.enabled))
     return ASH.settings.enabled
 end
 
 function ASH.SetEnabled(enabled)
+    if logger == nil then
+        error("Logger is not initialized.")
+    end
     logger.Debug("Setting AutoLog enabled state to: " .. tostring(enabled))
     if type(enabled) ~= "boolean" then
         logger.Error("Invalid value for enabled state. Must be a boolean.")
@@ -54,11 +68,17 @@ function ASH.SetEnabled(enabled)
 end
 
 function ASH.IsDebugMode()
+    if logger == nil then
+        error("Logger is not initialized.")
+    end
     logger.Debug("Checking if debug mode is enabled..." .. tostring(ASH.settings.debugMode))
     return ASH.settings.debugMode
 end
 
 function ASH.SetDebugMode(enabled)
+    if logger == nil then
+        error("Logger is not initialized.")
+    end
     logger.Debug("Setting debug mode to: " .. tostring(enabled))
     if type(enabled) ~= "boolean" then
         logger.Error("Invalid value for debug mode. Must be a boolean.")
@@ -69,11 +89,17 @@ function ASH.SetDebugMode(enabled)
 end
 
 function ASH.IsLoggingTrials()
+    if logger == nil then
+        error("Logger is not initialized.")
+    end
     logger.Debug("Checking if Trials logging is enabled..." .. tostring(ASH.settings.logTrials))
     return ASH.settings.logTrials
 end
 
 function ASH.SetLoggingTrials(enabled)
+    if logger == nil then
+        error("Logger is not initialized.")
+    end
     logger.Debug("Setting Trials logging state to: " .. tostring(enabled))
     if type(enabled) ~= "boolean" then
         logger.Error("Invalid value for Trials logging state. Must be a boolean.")
@@ -84,11 +110,17 @@ function ASH.SetLoggingTrials(enabled)
 end
 
 function ASH.IsLoggingDungeons()
+    if logger == nil then
+        error("Logger is not initialized.")
+    end
     logger.Debug("Checking if Dungeons logging is enabled..." .. tostring(ASH.settings.logDungeons))
     return ASH.settings.logDungeons
 end
 
 function ASH.SetLoggingDungeons(enabled)
+    if logger == nil then
+        error("Logger is not initialized.")
+    end
     logger.Debug("Setting Dungeons logging state to: " .. tostring(enabled))
     if type(enabled) ~= "boolean" then
         logger.Error("Invalid value for Dungeons logging state. Must be a boolean.")
@@ -99,11 +131,17 @@ function ASH.SetLoggingDungeons(enabled)
 end
 
 function ASH.IsLoggingWorldEvents()
+    if logger == nil then
+        error("Logger is not initialized.")
+    end
     logger.Debug("Checking if World Events logging is enabled..." .. tostring(ASH.settings.logWorldEvents))
     return ASH.settings.logWorldEvents
 end
 
 function ASH.SetLoggingWorldEvents(enabled)
+    if logger == nil then
+        error("Logger is not initialized.")
+    end
     logger.Debug("Setting World Events logging state to: " .. tostring(enabled))
     if type(enabled) ~= "boolean" then
         logger.Error("Invalid value for World Events logging state. Must be a boolean.")

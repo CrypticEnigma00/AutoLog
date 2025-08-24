@@ -4,7 +4,7 @@
 ## AddOnVersion: 1200
 ## Description: Enables Encounter Log automatically when entering a trial zone and disables when you leave 
 ## APIVersion: 101046
-## DependsOn: LibAddonMenu-2.0>=35 LibDebugLogger>=105
+## DependsOn: LibAddonMenu-2.0>=35 LibDebugLogger>=105 LibSlashCommander
 ## SavedVariables: AutoLogSV
 
 ## This Add-on is not created by, affiliated with or sponsored by ZeniMax Media Inc. or its affiliates.
@@ -20,6 +20,7 @@ AutoLogSettings.lua
 AutoLogMenu.lua
 AutoLogEncounterLog.lua
 AutoLogZone.lua
+AutoLogSlashCommands.lua
 
 
 lang/en.lua

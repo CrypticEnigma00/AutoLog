@@ -15,6 +15,7 @@ function AL.Init(logger)
     AL.encounterlog.Init(AL.logger)
     --Workload is done in this module.
     AL.zone.Init(AL.logger, AL.settingsHandler, AL.encounterlog)
+    AL.SlashCommands.Init(AL.logger, AL.settingsHandler)
     logger:Debug("AutoLog initialized successfully.")
 end
 
