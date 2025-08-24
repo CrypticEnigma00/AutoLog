@@ -49,4 +49,17 @@ function ALSC.RegisterEvents()
     disableSubCommand:AddAlias("disable")
     disableSubCommand:SetDescription("Disable AutoLog")
     disableSubCommand:SetCallback(function() settingsHandler.SetEnabled(false) end)
+
+    local statusSubCommand = command:RegisterSubCommand()
+    statusSubCommand:AddAlias("encounterLogStatus")
+    statusSubCommand:SetDescription("Check the EncounterLog status")
+    statusSubCommand:SetCallback(function() ALSC.EncounterLogStatus() end)
+end
+
+function ALSC.EncounterLogStatus()
+    if logger == nil then
+        error("Logger is not initialized.")
+    end
+
+    logger.Chat("EncounterLog is currently " .. (IsEncounterLogEnabled() and "enabled" or "disabled") .. ".")
 end

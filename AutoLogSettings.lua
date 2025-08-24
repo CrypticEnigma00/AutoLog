@@ -65,6 +65,7 @@ function ASH.SetEnabled(enabled)
     end
     ASH.settings.enabled = enabled
     logger.Debug("AutoLog enabled state set to: " .. tostring(enabled))
+    logger.Chat("AutoLog is now " .. (enabled and "enabled" or "disabled") .. ".")
 end
 
 function ASH.IsDebugMode()
