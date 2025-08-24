@@ -45,15 +45,26 @@ function ALSC.RegisterEvents()
     enableSubCommand:SetDescription("Enable AutoLog")
     enableSubCommand:SetCallback(function() settingsHandler.SetEnabled(true) end)
 
-    local disableSubCommand = command:RegisterSubCommand()
-    disableSubCommand:AddAlias("disable")
-    disableSubCommand:SetDescription("Disable AutoLog")
-    disableSubCommand:SetCallback(function() settingsHandler.SetEnabled(false) end)
+    local TrialsSubCommand = enableSubCommand:RegisterSubCommand()
+    TrialsSubCommand:AddAlias("trials")
+    TrialsSubCommand:SetDescription("Enable AutoLog for Trials")
+    TrialsSubCommand:SetCallback(function() settingsHandler.SetLoggingTrials(true) end)
+
 
     local statusSubCommand = command:RegisterSubCommand()
     statusSubCommand:AddAlias("encounterLogStatus")
     statusSubCommand:SetDescription("Check the EncounterLog status")
     statusSubCommand:SetCallback(function() ALSC.EncounterLogStatus() end)
+
+    local disableSubCommand = command:RegisterSubCommand()
+    disableSubCommand:AddAlias("disable")
+    disableSubCommand:SetDescription("Disable AutoLog")
+    disableSubCommand:SetCallback(function() settingsHandler.SetEnabled(false) end)
+
+    local TrialsSubCommand = disableSubCommand:RegisterSubCommand()
+    TrialsSubCommand:AddAlias("trials")
+    TrialsSubCommand:SetDescription("Disable AutoLog for Trials")
+    TrialsSubCommand:SetCallback(function() settingsHandler.SetLoggingTrials(false) end)
 end
 
 function ALSC.EncounterLogStatus()

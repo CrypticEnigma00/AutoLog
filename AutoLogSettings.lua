@@ -108,6 +108,7 @@ function ASH.SetLoggingTrials(enabled)
     end
     ASH.settings.logTrials = enabled
     logger.Debug("Trials logging state set to: " .. tostring(enabled))
+    logger.Chat("AutoLog Trials is now " .. (enabled and "enabled" or "disabled") .. ".")
 end
 
 function ASH.IsLoggingDungeons()
@@ -129,6 +130,7 @@ function ASH.SetLoggingDungeons(enabled)
     end
     ASH.settings.logDungeons = enabled
     logger.Debug("Dungeons logging state set to: " .. tostring(enabled))
+    logger.Chat("AutoLog Dungeons is now " .. (enabled and "enabled" or "disabled") .. ".")
 end
 
 function ASH.IsLoggingWorldEvents()
@@ -150,4 +152,5 @@ function ASH.SetLoggingWorldEvents(enabled)
     end
     ASH.settings.logWorldEvents = enabled
     logger.Debug("World Events logging state set to: " .. tostring(enabled))
+    logger.Chat("AutoLog World Events is now " .. (enabled and "enabled" or "disabled") .. ".")
 end
